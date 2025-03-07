@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="app.js"></script>
+    </head>
+
+    <body>
+    <div class="header">
+        <p>Мое обучение</p>
+    </div>
+
+        <div class="all">
+
+            <!-- Убери все <div/> с классом inside -->
+            <!-- Стили которые передаются в inside, сделай глобально! -->
+
+
+            <div class="parentDiv">
+                <p>Задание с input</p>
+
+                <div class="inputDiv">
+                    <input id="input-id">
+                    <span class="count-symb"></span>
+                </div>
+
+
+            </div>
+
+            <div class="parentDiv">
+                <p>Задание с кнопкой для смены цветов</p>
+                <div style="background-color: var(--section_color); padding: 0">
+
+                    <div class="list-strings">
+                        <p class="color-change">Я зеленный</p>
+                        <p class="color-change">Я синий</p>
+                        <p class="color-change">Я красный</p>
+                        <p class="color-change">Я желтый</p>
+                        <p class="color-change">Я коричневый</p>
+                        <p class="color-change">Я фиолетовый</p>
+                    </div>
+
+                    <button id="button" >Окрасить блок</button>
+                </div>
+
+
+            </div>
+
+
+            <div class="parentDiv">
+                <p>Задание с перемещением мыши</p>
+                <div id="mouseMove" class="childDiv" style="height: 300px">
+                    <p>Мышь за пределами блока</p>
+                </div>
+            </div>
+
+            <div style=" display: flex; width: 100%; height: 500px; padding: 0" >
+                <div id="list" class="parentDiv"
+                     style="width: 45%; height: 500px">
+
+                    <p>Задание с клубами</p>
+                    <div class="childDiv"
+                         style="box-sizing: border-box;  height: 448px; overflow-y: scroll;">
+
+                    </div>
+                </div>
+
+                <div style="width: 45%">
+                    <div class="parentDiv">
+                        <p>Задание паллиндром</p>
+                        <div  style="display: flex; flex-direction: row; gap: 12px; height: 448px; overflow-y: scroll">
+                            <div class="childDiv startWord" style="width: 40%;">
+                            </div>
+                            <button id="button2">Найти</button>
+                            <div class="childDiv polindromWords" style="width: 40%">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="example"></div>
+
+
+
+
+
+        </div>
+
+
+    </body>
+</html>
