@@ -280,31 +280,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //////////////////////// ШАПКА ПРИ СКРОЛЛЕ /////////////////////////////
 
-    const head = document.querySelector('.header');
+    const head = document.querySelector('.header > p');
 
-    window.addEventListener('scroll', (event) =>{
+    let distanceSectionsTop = [];
 
-        if (window.scrollY > 40 && window.scrollY < 170) {
-            console.log(window.scrollY)
-            head.textContent = 'Задание с input';
-        }
-        else if (window.scrollY > 171 && window.scrollY < 380)
-        {
-            head.textContent = 'Задание с кнопкой для смены цвета';
-        }
-        else if (window.scrollY > 381 && window.scrollY < 830)
-        {
-            head.textContent = 'Задание с перемещением мыши';
-        }
-        else if (window.scrollY > 831)
-        {
-            head.textContent = 'Задания с клубами и поллиндромами';
-        }
+    const updateListParentCoordinate = () => {
+        distanceSectionsTop = [];
 
+        document.querySelectorAll('.parentDiv').forEach(section => {
+            distanceSectionsTop.push({
+                name: section.querySelector('p').textContent,
+                distance: section.offsetTop,
+            });
+        });
+    };
 
+    updateListParentCoordinate();
 
+    window.addEventListener('resize', () => {
+        updateListParentCoordinate();
+    })
+
+    window.addEventListener('scroll', (event) => {
+        distanceSectionsTop.forEach(({name, distance}) => {
+            if (window.scrollY + 60 > distance) head.textContent = name;
+        })
+
+        if (window.scrollY < 32) head.textContent = 'Мое обучение';
     });
-
 });
 
 
